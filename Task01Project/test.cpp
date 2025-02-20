@@ -1,5 +1,14 @@
 #include "test.h"
 
+void print(int matrix[N][N], int expected, string name) {
+	int actual = count_zero_elements(matrix);
+
+	string msg = expected == actual ? "Pass." : "Fail.";
+
+	cout << name << " - " << msg << endl;
+	cout << "--------------" << endl;
+}
+
 void test01()
 {
 	int matrix[][N]
@@ -10,12 +19,7 @@ void test01()
 	{5, 6, 7, 8, 9} };
 
 	int expected = 0;
-	int actual = count_zero_elements(matrix);
-
-	string msg = expected == actual ? "Pass." : "Fail.";
-
-	cout << "Test01 - " << msg << endl;
-	cout << "--------------" << endl;
+	print(matrix, expected, "Test01");
 }
 
 void test02()
@@ -28,12 +32,7 @@ void test02()
 	{5, 6, 7, 8, 0} };
 
 	int expected = 1;
-	int actual = count_zero_elements(matrix);
-
-	string msg = expected == actual ? "Pass." : "Fail.";
-
-	cout << "Test02 - " << msg << endl;
-	cout << "--------------" << endl;
+	print(matrix, expected, "Test02");
 }
 
 void test03()
@@ -46,12 +45,7 @@ void test03()
 	{5, 6, 7, 8, 0} };
 
 	int expected = 5;
-	int actual = count_zero_elements(matrix);
-
-	string msg = expected == actual ? "Pass." : "Fail.";
-
-	cout << "Test03 - " << msg << endl;
-	cout << "--------------" << endl;
+	print(matrix, expected, "Test03");
 }
 
 void test04()
@@ -64,10 +58,5 @@ void test04()
 	{0, 0, 0, 0, 0} };
 
 	int expected = 25;
-	int actual = count_zero_elements(matrix);
-
-	string msg = expected == actual ? "Pass." : "Fail.";
-
-	cout << "Test04 - " << msg << endl;
-	cout << "--------------" << endl;
+	print(matrix, expected, "Test04");
 }
