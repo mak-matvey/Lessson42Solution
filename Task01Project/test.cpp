@@ -1,7 +1,7 @@
 #include "test.h"
 
-void print(int matrix[N][N], int expected, string name) {
-	int actual = count_zero_elements(matrix);
+void print(int matrix[N][N], string expected, string name) {
+	string actual = get_line_with_zero(matrix);
 
 	string msg = expected == actual ? "Pass." : "Fail.";
 
@@ -18,7 +18,7 @@ void test01()
 	{4, 5, 6, 7, 8},
 	{5, 6, 7, 8, 9} };
 
-	int expected = 0;
+	string expected = "";
 	print(matrix, expected, "Test01");
 }
 
@@ -31,11 +31,24 @@ void test02()
 	{4, 5, 6, 7, 8},
 	{5, 6, 7, 8, 0} };
 
-	int expected = 1;
+	string expected = "5 ";
 	print(matrix, expected, "Test02");
 }
 
 void test03()
+{
+	int matrix[][N]
+	{ {1, 2, 3, 4, 5},
+	{2, 3, 4, 5, 6},
+	{0, 4, 5, 6, 7},
+	{0, 5, 6, 7, 8},
+	{5, 6, 7, 8, 9} };
+
+	string expected = "3 4 ";
+	print(matrix, expected, "Test03");
+}
+
+void test04()
 {
 	int matrix[][N]
 	{ {1, 2, 3, 4, 0},
@@ -44,19 +57,6 @@ void test03()
 	{4, 5, 6, 7, 0},
 	{5, 6, 7, 8, 0} };
 
-	int expected = 5;
-	print(matrix, expected, "Test03");
-}
-
-void test04()
-{
-	int matrix[][N]
-	{ {0, 0, 0, 0, 0},
-	{0, 0, 0, 0, 0},
-	{0, 0, 0, 0, 0},
-	{0, 0, 0, 0, 0},
-	{0, 0, 0, 0, 0} };
-
-	int expected = 25;
+	string expected = "1 2 3 4 5 ";
 	print(matrix, expected, "Test04");
 }

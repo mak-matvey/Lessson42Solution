@@ -1,16 +1,19 @@
 #include "logic.h"
 
-int count_zero_elements(int matrix[N][N])
+string get_line_with_zero(int matrix[N][N])
 {
-	int count = 0;
+	string lines = "";
 
 	for (int j = 0; j < N; j++)
 	{
 		for (int i = 0; i < N; i++)
 		{
-			count += matrix[j][i] == 0 ? 1 : 0;
+			if (matrix[j][i] == 0) {
+				lines += to_string(j + 1) + " ";
+				break;
+			}
 		}
 	}
 
-	return count;
+	return lines;
 }
