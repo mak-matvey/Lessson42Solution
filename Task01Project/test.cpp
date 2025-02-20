@@ -60,3 +60,16 @@ void test04()
 	string expected = "1 2 3 4 5 ";
 	print(matrix, expected, "Test04");
 }
+
+void test05()
+{
+	int matrix[][N]
+	{ {1, 2, 3, 4, 5},
+	{2, 3, 4, 5, 6},
+	{0, 4, 0, 6, 7},
+	{0, 5, 6, 0, 0},
+	{5, 6, 7, 8, 9} };
+
+	string expected = "3 4 ";
+	print(matrix, expected, "Test05");
+}
